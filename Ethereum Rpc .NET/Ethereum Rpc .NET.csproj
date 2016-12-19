@@ -54,7 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EthereumRpcException.cs" />
-    <Compile Include="Ethereum\AbiDefinition\AbiItem.cs" />
     <Compile Include="Ethereum\Address.cs" />
     <Compile Include="Connection\ConnectionOptions.cs" />
     <Compile Include="Enums.cs" />
@@ -64,7 +63,6 @@
     <Compile Include="Ethereum\Whisper.cs" />
     <Compile Include="Ethereum\Work.cs" />
     <Compile Include="RpcObjects\Transaction.cs" />
-    <Compile Include="Service\EncryptionService.cs" />
     <Compile Include="Service\EtherCurrencyConverter.cs" />
     <Compile Include="Service\EthereumService.cs" />
     <Compile Include="MethodExtension.cs" />
@@ -79,6 +77,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
