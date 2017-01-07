@@ -58,6 +58,7 @@
     <Compile Include="Connection\ConnectionOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Ethereum\Block.cs" />
+    <Compile Include="Ethereum\ByteString.cs" />
     <Compile Include="Ethereum\Filter.cs" />
     <Compile Include="Ethereum\Log.cs" />
     <Compile Include="Ethereum\Whisper.cs" />

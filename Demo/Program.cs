@@ -13,8 +13,7 @@ using EthereumRpc;
 using EthereumRpc.Ethereum;
 using EthereumRpc.RpcObjects;
 using EthereumRpc.Service;
-using HashLib;
-
+using System.Threading;
 
 namespace Demo
 {
@@ -26,7 +25,7 @@ namespace Demo
             var privateConnection = new ConnectionOptions()
             {
                 Port = "8545",
-                Url = "http://localhost"
+                Url = "http://127.0.0.1"
             };
 
 
@@ -39,9 +38,6 @@ namespace Demo
                 var balance = ethereumService.GetBalance(account, BlockTag.Latest);
                 Console.WriteLine("account {0}: {1}", account, EtherCurrencyConverter.Convert(balance));
 
-                //var sign = ethereumService.Sign(account, "School bus");
-
-                //Console.WriteLine("sign : " + sign);
             }
 
             var blockNumber =  ethereumService.GetBlockNumber();
@@ -59,15 +55,23 @@ namespace Demo
 
             var res = ethereumService.UnlockAccount(accounts[0], "");
             Console.WriteLine(res);
-            var tx = new Transaction
-            {
-                From = accounts[0],
-                To = accounts[1],
-                Value = "2"
-            };
-            var hash = ethereumService.SendTransaction(accounts[0], accounts[1], 90000, "", 1, 2);
+            //var tx = new Transaction
+            //{
+            //    From = accounts[0],
+            //    To = accounts[1],
+            //    Value = "2"
+            //};
+            //var hash = ethereumService.SendTransaction(accounts[0], accounts[1], 90000, ByteString.ConvertStringToHexUnicode("This is my test data"), 1, 2);
 
-            Console.WriteLine(hash);
+            Console.WriteLine(ByteString.ConvertStringToHexUnicode("This is my test data"));
+
+            //Thread.Sleep(5000);
+            //Console.WriteLine(hash);
+            var tx = ethereumService.GetTransactionByHash("0xf48d237256ab63872d093fc0bcb4c9ea4a205c5dd6ad47a37558e11dd9d1f5df");
+
+            //var tx = ethereumService.GetTransactionByHash(hash);
+            Console.WriteLine("Tx: {0}", tx.Input);
+            Console.WriteLine("Tx: {0}", ByteString.ConvertHexToStringUnicode(tx.Input.Substring(2)));
         }
     }
 }
