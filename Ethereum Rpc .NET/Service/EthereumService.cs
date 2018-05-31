@@ -5,7 +5,6 @@ using System.Configuration;
 using System.Numerics;
 using EthereumRpc.Ethereum;
 using EthereumRpc.RpcObjects;
-using EthereumRpc.RpcObjects.EthereumRpc.RpcObjects;
 using Microsoft.SqlServer.Server;
 using Newtonsoft.Json;
 
@@ -576,7 +575,6 @@ namespace EthereumRpc
         {
             var rpcRequest = new RpcRequest(RpcMethod.eth_getTransactionByHash);
             rpcRequest.AddParam(hash);
-            rpcRequest.AddParam("true");
             var rpcResult = new RpcConnector().MakeRequest(rpcRequest);
             var json = JsonConvert.SerializeObject(rpcResult.Result);
             var tx = JsonConvert.DeserializeObject<Transaction>(json);

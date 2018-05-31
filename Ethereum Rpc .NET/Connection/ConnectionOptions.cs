@@ -14,8 +14,20 @@ namespace EthereumRpc
         public int TimeOut { get; set; }
         public NetworkCredential NetworkCredential { get; set; }
         public WebProxy Proxy { get; set; }
-        public string FullUrl => string.Format("{0}:{1}", Url, Port);
-        public bool IsUrlValid => FullUrl.IsUri();
+        public string FullUrl
+        {
+            get 
+            {
+                return string.Format("{0}:{1}", Url, Port);
+            }
+        }
+        public bool IsUrlValid
+        {
+            get
+            {
+                return FullUrl.IsUri();
+            }
+        }
 
         public ConnectionOptions()
         {

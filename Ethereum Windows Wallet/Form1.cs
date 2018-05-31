@@ -166,9 +166,9 @@ namespace Ethereum.Wallet
         {
             var section = (dgSendTransactions.Width-40)/10;
 
-            dgSendTransactions.Columns[0].Width = section*3;
-            dgSendTransactions.Columns[1].Width = section*2;
-            dgSendTransactions.Columns[2].Width = section*5;
+            //dgSendTransactions.Columns[0].Width = section*3;
+            //dgSendTransactions.Columns[1].Width = section*2;
+            //dgSendTransactions.Columns[2].Width = section*5;
 
         }
 

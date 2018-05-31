@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EthereumRpc</RootNamespace>
     <AssemblyName>EthereumRpc</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,9 +38,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -54,17 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EthereumRpcException.cs" />
-    <Compile Include="Ethereum\AbiDefinition\AbiItem.cs" />
     <Compile Include="Ethereum\Address.cs" />
     <Compile Include="Connection\ConnectionOptions.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Ethereum\Block.cs" />
+    <Compile Include="Ethereum\ByteString.cs" />
     <Compile Include="Ethereum\Filter.cs" />
     <Compile Include="Ethereum\Log.cs" />
     <Compile Include="Ethereum\Whisper.cs" />
     <Compile Include="Ethereum\Work.cs" />
     <Compile Include="RpcObjects\Transaction.cs" />
-    <Compile Include="Service\EncryptionService.cs" />
     <Compile Include="Service\EtherCurrencyConverter.cs" />
     <Compile Include="Service\EthereumService.cs" />
     <Compile Include="MethodExtension.cs" />
@@ -79,6 +78,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
